@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Payfort_Payfortstartgateway>
+            <version>1.0.0.0</version>
+        </Payfort_Payfortstartgateway>
+    </modules>
+ 
+    <global>
+        <helpers>
+            <payfortstartgateway>
+                <class>Payfort_Payfortstartgateway_Helper</class>
+            </payfortstartgateway>
+        </helpers>
+ 
+        <blocks>
+            <payfortstartgateway>
+                <class>Payfort_Payfortstartgateway_Block</class>
+            </payfortstartgateway>
+        </blocks>
+         
+        <models>
+            <payfortstartgateway>
+                <class>Payfort_Payfortstartgateway_Model</class>
+            </payfortstartgateway>
+        </models>
+ 
+        <resources>
+            <payfortstartgateway_setup>
+                <setup>
+                    <module>Payfort_Payfortstartgateway</module>
+                </setup>
+            </payfortstartgateway_setup>
+        </resources>
+    </global>
+ 
+    <default>
+        <payment>
+            <payfortstartgateway>
+                <active>1</active>
+                <model>payfortstartgateway/paymentmethod</model>
+                <order_status>pending</order_status>
+                <title>Credit / Debit Card</title>
+                <allowspecific>0</allowspecific>
+                <payment_action>sale</payment_action>
+            </payfortstartgateway>
+        </payment>
+    </default>
+   
+    <frontend>
+        <routers>
+            <payfortstartgateway>
+                <use>standard</use>
+                <args>
+                    <module>Payfort_Payfortstartgateway</module>
+                    <frontName>payfortstartgateway</frontName>
+                </args>
+            </payfortstartgateway>
+        </routers>
+    </frontend>
+</config>
